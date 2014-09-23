@@ -1,0 +1,16 @@
+{
+    "require": {
+        "twig/twig": "1.*",
+        "klein/klein": "2.0.x",
+        "austinhyde/iniparser": "dev-master",
+        "vrana/notorm": "dev-master"
+    },
+    "autoload": {
+    	"psr-4": {
+			"Fleet\\": "fleet/",
+			"Controllers\\": "application/controllers/",
+			"Models\\": "application/models/",
+			"Views\\": "application/views/"
+		}
+    }
+}
