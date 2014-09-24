@@ -1,36 +1,84 @@
 {% extends 'default.twig' %}
 {% block title %}Hello{% endblock %}
 {% block content %}
-<div class="row">
-	<div class="col-md-6 col-md-offset-3 text-center">
-		<div class="jumbotron">
-			<h1>Hello, {{name|title}}!</h1>
-			<blockquote class="blockquote-reverse">
-				<p>&ldquo;Hi <em>{{app.author|title}}</em> 😜, this is the Fleet demo app. Inspect the sources and start editing the files in order to create your app.&rdquo;</p>
-				<footer>👋 <cite title="Matteo 💚 Open Source">Matteo Merola</cite></footer>
-			</blockquote>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3 text-center">
+			<div class="jumbotron">
+				<h1>Hello, {{name|title}}!</h1>
+				<img src="{{img}}/finished.png" alt="finished-image" class="img-responsive" style="height: 250px; margin: 20px auto;">
+				<blockquote class="blockquote-reverse">
+					<p>&ldquo;Hi <em>{{app.author|title}}</em> 😜, this is the Fleet demo app. Inspect the sources and start editing the files in order to create your app.&rdquo;</p>
+					<footer>👋 <cite title="Matteo 💚 Open Source">Matteo Merola</cite></footer>
+				</blockquote>
+				<form id="theform" role="form">
+					<div class="form-group">
+						<label for="name">Say hello to...</label>
+						<input type="text" class="form-control" id="name" placeholder="A name..." value="{{name|title}}">
+					</div>
+					<button type="submit" class="btn btn-primary btn-lg">Okay</button>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="row text-center">
+		<div class="col-md-4 col-md-offset-2">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<p><img class="img-responsive" alt="github" src="{{img}}/github.png" style="width: 70%; margin: 0 auto;" /></p>
+					<h4>Found a bug? A missing feature? Please report an issue at <a href="https://github.com/mattmezza/fleet/issues/new" target="__BLANK">GitHub</a>!</h4>
+					<h4><small>I'll be glad to figure it out 😃</small></h4>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<h4>Wanna share <em>Fleet</em> with somebody?</h4>
+					<div>
+						<a class="btn btn-block btn-social btn-twitter sharer" href="https://twitter.com/home?status=https://github.com/mattmezza/fleet" target="__NEW">
+							<i class="fa fa-twitter"></i> Tweet the world about Fleet
+						</a>
+						
+						<a class="btn btn-block btn-social btn-facebook sharer" href="https://www.facebook.com/sharer/sharer.php?u=https://github.com/mattmezza/fleet" target="__NEW">
+							<i class="fa fa-facebook"></i> Post about Fleet on Facebook
+						</a>
+						<a class="btn btn-block btn-social btn-google-plus sharer" href="https://plus.google.com/share?url=https://github.com/mattmezza/fleet" target="__NEW">
+							<i class="fa fa-google-plus"></i> Update your Google+ profile
+						</a>
+						<a class="btn btn-link" href="https://twitter.com/search?f=realtime&q=Fleet" target="__NEW">
+							#Fleet on <i class="fa fa-twitter"></i>
+						</a>
+						<a class="btn btn-link" href="https://www.facebook.com/hashtag/Fleet" target="__NEW">
+							#Fleet on <i class="fa fa-facebook"></i>
+						</a>
+						<a class="btn btn-link" href="https://plus.google.com/explore/Fleet" target="__NEW">
+							#Fleet on <i class="fa fa-google-plus"></i>
+						</a>
+					</div>
+					<hr />
+					<div>
+						<h4>Wanna get in contact with me?</h4>
+						<a class="btn btn-social-icon btn-twitter" href="https://twitter.com/matteomerola">
+							<i class="fa fa-twitter"></i>
+						</a>
+						<a class="btn btn-social-icon btn-facebook" href="https://facebook.com/matteo.merola">
+							<i class="fa fa-facebook"></i>
+						</a>
+						<a class="btn btn-social-icon btn-google-plus" href="https://plus.google.com/+MatteoMerola">
+							<i class="fa fa-google-plus"></i>
+						</a>
+						<a class="btn btn-social-icon btn-github" href="https://github.com/mattmezza">
+							<i class="fa fa-github"></i>
+						</a>
+						<a class="btn btn-social-icon btn-reddit" style="color: #535353;" href="mailto:mattmezza@gmail.com?subject=Contact from a fresh installation of Fleet">
+							<span class="glyphicon glyphicon-envelope"></span>
+						</a>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
-<div class="row">
-	<div class="col-md-6 col-md-offset-3 text-center">
-		<form id="theform" role="form">
-			<div class="form-group">
-				<label for="name">Say hello to...</label>
-				<input type="text" class="form-control" id="name" placeholder="A name..." value="{{name|title}}">
-			</div>
-		</form>
-	</div>
-</div>
-<script type="text/javascript">
-$(document).ready(function() {
-	$('#name').on('click', function() {
-		$(this).select();
-	});
-	$('#theform').on('submit', function() {
-		var name = $('#name').val();
-		$(this).attr('action', "/hello/"+encodeURIComponent(name));
-	})
-});
-</script>
+<script type="text/javascript" src="{{js}}/hello/ready.js"></script>
 {% endblock %}
