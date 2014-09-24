@@ -29,7 +29,7 @@ $(document).ready(function() {
 	});
 	$('#theform').on('submit', function() {
 		var name = $('#name').val();
-		$(this).attr('action', "/hello/"+name);
+		$(this).attr('action', "/hello/"+encodeURIComponent(name));
 	})
 });
 </script>
