@@ -1,5 +1,36 @@
 {% extends 'default.twig' %}
 {% block title %}Hello{% endblock %}
 {% block content %}
-{{content}}
+<div class="row">
+	<div class="col-md-6 col-md-offset-3 text-center">
+		<div class="jumbotron">
+			<h1>Hello, {{name|title}}!</h1>
+			<blockquote class="blockquote-reverse">
+				<p>&ldquo;Hi <em>{{app.author|title}}</em> 😜, this is the Fleet demo app. Inspect the sources and start editing the files in order to create your app.&rdquo;</p>
+				<footer>👋 <cite title="Matteo 💚 Open Source">Matteo Merola</cite></footer>
+			</blockquote>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-6 col-md-offset-3 text-center">
+		<form id="theform" role="form">
+			<div class="form-group">
+				<label for="name">Say hello to...</label>
+				<input type="text" class="form-control" id="name" placeholder="A name..." value="{{name|title}}">
+			</div>
+		</form>
+	</div>
+</div>
+<script type="text/javascript">
+$(document).ready(function() {
+	$('#name').on('click', function() {
+		$(this).select();
+	});
+	$('#theform').on('submit', function() {
+		var name = $('#name').val();
+		$(this).attr('action', "/hello/"+name);
+	})
+});
+</script>
 {% endblock %}

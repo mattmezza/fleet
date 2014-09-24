@@ -19,11 +19,34 @@
         .navbar>.container-fluid .navbar-brand-centered {
             margin-left: -80px;
         }
-        }    </style>
+        }    
+
+        /* Sticky footer styles
+        -------------------------------------------------- */
+        html {
+          position: relative;
+          min-height: 100%;
+        }
+        body {
+          /* Margin bottom by footer height */
+          margin-bottom: 60px;
+        }
+        .footer {
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          /* Set the fixed height of the footer here */
+          height: 60px;
+          background-color: #f5f5f5;
+        }
+
+
+        </style>
         <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     </head>
     <body>
+      <div>
        <nav class="navbar navbar-default" role="navigation">
          <div class="container">
           <!-- Brand and toggle get grouped for better mobile display -->
@@ -34,10 +57,10 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
           </button>
-          <div class="navbar-brand navbar-brand-centered">Brand</div>
+          <div class="navbar-brand navbar-brand-centered"><a style="text-decoration: none;" href="{{app.url}}" title="Edit this into your app.ini file...">{{app.name|title}}</a></div>
       </div>
 
-      <!-- Collect the nav links, forms, and other content for toggling -->
+      <!-- Collect the nav links, forms, and other content for toggling 
       <div class="collapse navbar-collapse" id="navbar-brand-centered">
         <ul class="nav navbar-nav">
           <li><a href="#">Link</a></li>
@@ -49,12 +72,20 @@
           <li><a href="#">Link</a></li>
           <li><a href="#">Link</a></li>		        
       </ul>
+      -->
   </div><!-- /.navbar-collapse -->
 </div><!-- /.container-fluid -->
 </nav>	
 {% block content %}
 prova
 {% endblock %}
+</div>
+<div class="footer">
+  <div class="container text-center">
+    <p>&nbsp;</p>
+    <p class="text-muted">Copyright {{ "now"|date('Y', timezone="Europe/Rome") }} &copy; – Made with 💚 by <a href="http://you.canmakethat.com">Matteo Merola</a></p>
+  </div>
+</div>
 <script type="text/javascript">
 </script>
 </body>
