@@ -1,4 +1,6 @@
 RewriteEngine On
-#RewriteCond %{REQUEST_URI} !^/public/.*$
+# if you installed into subdirectory please fill and decomment next line
+#RewriteBase /subdir/
 RewriteCond %{REQUEST_FILENAME} !-f
+# if you installed into subdirectory please change /index.php into index.php into next line
 RewriteRule . /index.php [L] 
