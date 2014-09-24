@@ -20,7 +20,7 @@ $klein->template = $template;
 
 // route for /
 $klein->respond('GET', '/', function ($request, $response, $service, $app) use ($klein) {
-	$response->redirect($klein->config->app->url."/hello/world");
+	$response->redirect($klein->config->app->url."/hello/".$klein->config->app->author);
 });
 
 foreach (glob("application/controllers/*.php") as $filename)

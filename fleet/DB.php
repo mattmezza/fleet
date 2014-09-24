@@ -7,6 +7,8 @@ class DB {
 	public static function getInstance() {
 		if($INSTANCE == null) {
 			$config = \Fleet\Config::getInstance();
+			if(!isset($config->db->type) || !isset($config->db->host) || !isset($config->db->user) || !isset($config->db->name))
+				return null;
 			$type = $config->db->type;
 			$host = $config->db->host;
 			$user = $config->db->user;
