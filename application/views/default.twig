@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% set bower = app.url ~ '/public/bower_components' %}
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>{% block title %}{% endblock %} - {{ app.name }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link href="{{bower}}/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <style type="text/css">
     @media screen and (min-width:768px){
         .navbar-brand-centered {
@@ -42,8 +43,8 @@
 
 
         </style>
-        <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-        <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script src="{{bower}}/jquery/dist/jquery.min.js"></script>
+        <script src="{{bower}}/bootstrap/dist/js/bootstrap.min.js"></script>
     </head>
     <body>
       <div>
