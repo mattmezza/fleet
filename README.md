@@ -11,6 +11,8 @@ A rapid and keep-it-super-simple php framework!
 * Reach your app URL: if you see the welcome page then you are done! 😜
 * Start editing PHP files into application/controllers directory
 
+_When switching to production please remember to delete public/install.php and public/installer.php files._
+
 #### Create something extraordinary with your new installation of fleet!
 
 ###### For any information please contact me at [mattmezza@gmail.com](mailto:mattmezza@gmail.com).
