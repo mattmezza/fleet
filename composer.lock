@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0c20a00e2b8f66f990a6b5d990af4630",
+    "content-hash": "a1563b4e82fe21f189d623c908113af1",
     "packages": [
         {
             "name": "austinhyde/iniparser",
@@ -45,32 +45,34 @@
             "keywords": [
                 "configuration"
             ],
-            "time": "2014-04-12 14:28:42"
+            "time": "2014-04-12T14:28:42+00:00"
         },
         {
             "name": "klein/klein",
-            "version": "v2.0.2",
+            "version": "v2.1.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/chriso/klein.php.git",
-                "reference": "6e1f228ce82333b437402dafad049713eb3eeac6"
+                "url": "https://github.com/klein/klein.php.git",
+                "reference": "6549676cc831b9417332b3d9485c64bbf7bac728"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/chriso/klein.php/zipball/6e1f228ce82333b437402dafad049713eb3eeac6",
-                "reference": "6e1f228ce82333b437402dafad049713eb3eeac6",
+                "url": "https://api.github.com/repos/klein/klein.php/zipball/6549676cc831b9417332b3d9485c64bbf7bac728",
+                "reference": "6549676cc831b9417332b3d9485c64bbf7bac728",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "3.7.x"
+                "phpunit/php-code-coverage": "^2.2",
+                "phpunit/phpunit": "^4.8",
+                "squizlabs/php_codesniffer": "1.4.8"
             },
             "type": "library",
             "autoload": {
-                "psr-0": {
-                    "Klein": "."
+                "psr-4": {
+                    "Klein\\": "src/Klein/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -87,46 +89,114 @@
                 {
                     "name": "Trevor Suarez",
                     "email": "rican7@gmail.com",
-                    "homepage": "http://about.me/tnsuarez",
+                    "homepage": "https://trevorsuarez.com/",
                     "role": "Contributor/Developer"
                 }
             ],
             "description": "A lightning fast router for PHP",
-            "homepage": "https://github.com/chriso/klein.php",
+            "homepage": "https://github.com/klein/klein.php",
             "keywords": [
                 "boilerplate",
                 "router",
                 "routing",
                 "sinatra"
             ],
-            "time": "2013-06-16 23:32:47"
+            "time": "2017-02-01T23:08:58+00:00"
         },
         {
-            "name": "twig/twig",
-            "version": "v1.16.0",
+            "name": "symfony/polyfill-mbstring",
+            "version": "v1.7.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/fabpot/Twig.git",
-                "reference": "8ce37115802e257a984a82d38254884085060024"
+                "url": "https://github.com/symfony/polyfill-mbstring.git",
+                "reference": "78be803ce01e55d3491c1397cf1c64beb9c1b63b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fabpot/Twig/zipball/8ce37115802e257a984a82d38254884085060024",
-                "reference": "8ce37115802e257a984a82d38254884085060024",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/78be803ce01e55d3491c1397cf1c64beb9c1b63b",
+                "reference": "78be803ce01e55d3491c1397cf1c64beb9c1b63b",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.2.4"
+                "php": ">=5.3.3"
+            },
+            "suggest": {
+                "ext-mbstring": "For best performance"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.16-dev"
+                    "dev-master": "1.7-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Polyfill\\Mbstring\\": ""
+                },
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill for the Mbstring extension",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "mbstring",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "time": "2018-01-30T19:27:44+00:00"
+        },
+        {
+            "name": "twig/twig",
+            "version": "v2.4.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twigphp/Twig.git",
+                "reference": "7b604c89da162034bdf4bb66310f358d313dd16d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/7b604c89da162034bdf4bb66310f358d313dd16d",
+                "reference": "7b604c89da162034bdf4bb66310f358d313dd16d",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0",
+                "symfony/polyfill-mbstring": "~1.0"
+            },
+            "require-dev": {
+                "psr/container": "^1.0",
+                "symfony/debug": "^2.7",
+                "symfony/phpunit-bridge": "^3.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.4-dev"
                 }
             },
             "autoload": {
                 "psr-0": {
                     "Twig_": "lib/"
+                },
+                "psr-4": {
+                    "Twig\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -147,7 +217,7 @@
                 },
                 {
                     "name": "Twig Team",
-                    "homepage": "https://github.com/fabpot/Twig/graphs/contributors",
+                    "homepage": "http://twig.sensiolabs.org/contributors",
                     "role": "Contributors"
                 }
             ],
@@ -156,7 +226,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2014-07-05 12:19:05"
+            "time": "2018-04-02T09:24:19+00:00"
         },
         {
             "name": "vrana/notorm",
@@ -164,12 +234,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/vrana/notorm.git",
-                "reference": "67996dff1fca3abf601c2678912842ae480fc4a6"
+                "reference": "e49d5d2f1bfe440dc82b61f46172635dfcb6f6dd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vrana/notorm/zipball/67996dff1fca3abf601c2678912842ae480fc4a6",
-                "reference": "67996dff1fca3abf601c2678912842ae480fc4a6",
+                "url": "https://api.github.com/repos/vrana/notorm/zipball/e49d5d2f1bfe440dc82b61f46172635dfcb6f6dd",
+                "reference": "e49d5d2f1bfe440dc82b61f46172635dfcb6f6dd",
                 "shasum": ""
             },
             "type": "library",
@@ -185,7 +255,7 @@
             ],
             "authors": [
                 {
-                    "name": "Jakub Vrána",
+                    "name": "Jakub Vrana",
                     "homepage": "http://www.vrana.cz/"
                 }
             ],
@@ -195,25 +265,18 @@
                 "database",
                 "dbal"
             ],
-            "time": "2014-09-15 04:51:29"
+            "time": "2014-10-30T16:55:08+00:00"
         }
     ],
-    "packages-dev": [
-
-    ],
-    "aliases": [
-
-    ],
+    "packages-dev": [],
+    "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
         "austinhyde/iniparser": 20,
         "vrana/notorm": 20
     },
     "prefer-stable": false,
-    "platform": [
-
-    ],
-    "platform-dev": [
-
-    ]
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
 }

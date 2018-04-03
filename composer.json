@@ -1,7 +1,7 @@
 {
     "require": {
-        "twig/twig": "1.*",
-        "klein/klein": "2.0.x",
+        "twig/twig": "^2.0",
+        "klein/klein": "^2.0",
         "austinhyde/iniparser": "dev-master",
         "vrana/notorm": "dev-master"
     },
